@@ -98,11 +98,11 @@ body {
 
 @keyframes flyHeart {
     0% {
-        transform: translate(-1000px, 0px) scale(1); /* Başlangıçta ekranın sol dışından */
+        transform: translate(0px, 0px) scale(1); /* Başlangıçta ekranın sol dışından */
         opacity: 1;
     }
     100% {
-        transform: translate( -800px, -1200px) scale(0.8); /* Ekranın üst kısmına daha yakın */
+        transform: translate( -1000px, -5000px) scale(0.8); /* Ekranın üst kısmına daha yakın */
         opacity: 0.7;
     }
 }
