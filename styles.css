@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+
+    /* Arka plana fotoğraf ekliyoruz */
+    background-image: url(arka\ plan4.png); /* Buraya kendi fotoğrafınızın yolunu yazın */
+    background-size: cover; /* Fotoğraf sayfayı tamamen kaplasın */
+    background-position: center; /* Fotoğrafın ortalanmasını sağlar */
+    background-attachment: fixed; /* Arka plan fotoğrafı kaydırılmasın */
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+#loveButton {
+    padding: 30px 40px;
+    font-size: 30px;
+    background-color: rgba(186, 122, 255, 0.6);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 30px;
+}
+
+#loveButton:hover {
+    background-color: rgba(186, 122, 255, 0.8);
+}
+
+#messageBox {
+    font-size: 30px;
+    color: white;
+    background-color: rgba(186, 122, 255);
+    padding: 100px 200px;
+    border-radius: 15px;
+    display: none; /* Başlangıçta gizli */
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hearts {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Gerçek kalp şekli */
+.heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    transform: rotate(45deg);
+    animation: flyHeart 4s ease-out forwards;
+    opacity: 1;
+}
+
+.heart:before, .heart:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.heart:before {
+    left: -15px;
+    top: 0;
+}
+
+.heart:after {
+    top: -15px;
+    left: 0;
+}
+
+@keyframes flyHeart {
+    0% {
+        transform: translate(-1000px, 0px) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate( -800px, -1500px) scale(0.8); /* Üst kısma kadar hareket */
+        opacity: 0.7; /* Opaklık kaybolmaya devam eder */
+    }
+}
+
+/* Mobil uyumluluk için media query ekliyoruz */
+@media (max-width: 768px) {
+    #loveButton {
+        font-size: 16px;
+        padding: 15px 30px;
+    }
+
+    #messageBox {
+        font-size: 24px;
+        padding: 15px;
+    }
+}
