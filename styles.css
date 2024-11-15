@@ -61,10 +61,12 @@ body {
 #hearts {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100%;  /* Ekranın tamamını kaplasın */
     pointer-events: none;
     z-index: 5;
+    top: 0;  /* Ekranın üst kısmında başlasın */
 }
+
 
 /* Gerçek kalp şekli */
 .heart {
